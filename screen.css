@@ -3,6 +3,7 @@
         margin: 0;
         padding: 0;
     }
+
     html,
     .container,
     .row {
@@ -10,15 +11,19 @@
         display: flex;
         justify-content: center;
     }
+
     nav {
         padding: 0 0 0 25px;
     }
+
     nav li:hover {
         border-radius: 0;
     }
+
     .navbar-brnd img {
         width: 50%;
     }
+
     .link-container {
         padding-top: 15px;
         flex-direction: column;
@@ -33,12 +38,14 @@
         box-shadow: -5px 0 5px rgb(0, 0, 0, 0.25);
         transition: 0.7s ease-out;
     }
+
     .link-container ul {
         margin-top: 14px;
         gap: 3px;
         display: flex;
         flex-direction: column;
     }
+
     .link-container li {
         box-sizing: border-box;
         height: auto;
@@ -46,32 +53,40 @@
         padding: 0px;
         justify-content: flex-start;
     }
+
     .open-sidebar-button,
     .close-sidebar-button {
         display: block;
     }
+
     #sidebar-active:checked~.link-container {
         right: 0;
     }
+
     #home-section .prof-img {
         max-width: 250px;
     }
+
     #home-section .social-icon {
         display: flex;
         justify-content: center;
         gap: 0px;
         padding-top: 20px;
     }
+
     #home-section .social-icon a {
         padding: 0 10px;
     }
+
     #home-section .empty {
         display: none;
     }
+
     #home-section .social-icon svg {
         margin-top: 15px;
         height: 37px;
     }
+
     .home {
         padding-top: 0px;
         animation: scale_in 2s ease-in-out;
@@ -79,24 +94,30 @@
         /* animation-range: entry 20;  */
         animation-range: 0% cover 50%;
     }
+
     #about-section img {
         min-width: 250px;
         margin-bottom: 25px;
     }
+
     #project-section .container,
     #project-section .container .row {
         width: auto;
         display: block;
     }
+
     .heading {
         align-items: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
+
     .border-line {
         width: calc(50%);
     }
+
+
 }
 
 @media (max-width: 465px) {
@@ -105,5 +126,7 @@
         100% {
             width: 247px;
         }
+
     }
+    
 }
