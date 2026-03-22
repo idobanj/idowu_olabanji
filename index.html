@@ -361,6 +361,13 @@ Minna — a field that strengthens my analytical thinking and approach to proble
 
     <!--custom js-->
     <script src="/index.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/sw.js");
+        });
+      }
+    </script>
 
 </body>
 
