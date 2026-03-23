@@ -52,7 +52,7 @@
       "sameAs": [
         "https://www.facebook.com/Idobanj181",
         "https://www.instagram.com/iam_idobanj181",
-        "https://www.linkedin.com/in/olabanji-peter-idowu-6176ab297",
+        "https://www.linkedin.com/in/olabanjiidowu",
         "https://www.tiktok.com/@idobanj_innovation"
       ]
     }
@@ -124,7 +124,7 @@
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-lg-3">
 
-                        <a href="mailto:idowuolabanji181@gmail.com?subject=Project%20Inquiry%20from%20Portfolio&body=Hi%20Olabanji%2C%0A%0AI%27m%20interested%20in%20working%20with%20you.%20Here%20are%20the%20details%20of%20my%20project%3A%0A-%20Scope%3A%20%0A-%20Timeline%3A%20%0A-%20Budget%3A%20%0A%0AThanks%2C%0A" data-aos="fade-down" class="btn hire-btn btn-lg px-lg-5 me-md-2 rounded-5">Hire
+                        <a id="hire-me-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=idowuolabanji181@gmail.com" data-aos="fade-down" class="btn hire-btn btn-lg px-lg-5 me-md-2 rounded-5">Hire
                 Me</a>
 
                         <a href="tel:+2349078062952" data-aos="fade-right" class="btn contact-btn btn-lg px-lg-5 rounded-5">Contact
@@ -134,7 +134,7 @@
 
                     <div class="social-icon">
 
-                        <a href="https://www.linkedin.com/in/olabanji-peter-idowu-6176ab297" title="follow me on linkedin" aria-label="Follow me on LinkedIn">
+                        <a href="https://www.linkedin.com/in/olabanjiidowu" title="follow me on linkedin" aria-label="Follow me on LinkedIn">
 
                             <?xml version="1.0" encoding="utf-8"?>
 
@@ -361,6 +361,37 @@ Minna — a field that strengthens my analytical thinking and approach to proble
 
     <!--custom js-->
     <script src="/index.js"></script>
+    <script>
+      (function () {
+        const hireMeLink = document.getElementById("hire-me-link");
+        if (!hireMeLink) return;
+
+        const to = "idowuolabanji181@gmail.com";
+        const subject = "Project Inquiry from Portfolio";
+        const body =
+          "Hi Olabanji,\n\nI'm interested in working with you. Here are the details of my project:\n- Scope: \n- Timeline: \n- Budget: \n\nThanks,\n";
+
+        const params = `to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&${params}`;
+        const gmailIosUrl = `googlegmail:///co?${params}`;
+        const gmailAndroidIntentUrl = `intent://co?${params}#Intent;scheme=googlegmail;package=com.google.android.gm;end;`;
+
+        hireMeLink.href = gmailWebUrl;
+        hireMeLink.addEventListener("click", function (event) {
+          const ua = navigator.userAgent || "";
+          const isAndroid = /Android/i.test(ua);
+          const isIOS = /iPhone|iPad|iPod/i.test(ua);
+          if (!isAndroid && !isIOS) return;
+
+          event.preventDefault();
+          const appUrl = isAndroid ? gmailAndroidIntentUrl : gmailIosUrl;
+          window.location.href = appUrl;
+          setTimeout(function () {
+            window.location.href = gmailWebUrl;
+          }, 900);
+        });
+      })();
+    </script>
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
